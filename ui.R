@@ -1,12 +1,14 @@
 library(shiny)
 library(splines)
 
+Data <- readRDS("WebScrapeRenaultCars.Rda")
+
 shinyUI(
         pageWithSidebar(
-        headerPanel("Residual value model"),
+        headerPanel("Residual value model Renault"),
         
         sidebarPanel(
-                selectInput("model", "model", choices = (CarData$Type), multiple = FALSE, selected = ""),
+                selectInput("model", "model", choices = (Data$Type), multiple = FALSE, selected = ""),
                 numericInput("kilometers", "kilometers", value = 15000, min = 0, step = 5000),
                 numericInput("age", "age", value = 365, min = 0, step = 365)
         ),
@@ -21,8 +23,7 @@ shinyUI(
                                  verbatimTextOutput('age'),
                                  h4('Residual value'),
                                  verbatimTextOutput('ResidualValue')
-                        ),
-                        tabPanel('Plot')
+                        )
                 )
         )
 ))
