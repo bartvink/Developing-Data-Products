@@ -1,0 +1,65 @@
+Residual value model Renault
+========================================================
+author: Bart Vink
+date: `r format(Sys.Date(), format = "%B %d, %Y")`
+autosize: true
+transition: rotate
+  
+  
+  
+<small>
+Coursera Data Science Specialization  
+Developing Data Products  
+Course Presentation
+</small>  
+
+The Context
+========================================================
+transition: rotate
+
+This presentation is  created as part of the assessment for the [**Coursera developing data products**](https://www.coursera.org/specializations/jhu-data-science) course.  
+The assignment consists of two parts: 
+
+1. Building a data product application in [Shiny](https://bartvink.shinyapps.io/Developing-Data-Products-Residual-Value-Model-Renault)
+2. Creatign a presentation related the the build appliaction in [RStudio - Presentation](https://www.rstudio.com) or [slidify](http://slidify.org)
+
+The Application
+========================================================
+transition: rotate  
+The data product application has been developed and deployed at:  
+[https://bartvink.shinyapps.io/Developing-Data-Products-Residual-Value-Model-Renault](https://bartvink.shinyapps.io/Developing-Data-Products-Residual-Value-Model-Renault)
+  
+  
+This application shows a user the residual value of a Renault.  
+The model of interest can be  selected, togehter with the kilometers and age.  
+The application will predict the residual value for that particular car. 
+  
+The Data
+========================================================
+transition: rotate
+
+The value of a car is estimated by scraping [AutoTrader](www.autotrader.nl).  
+AutoTrader is a dutch website where used cars are sold.  
+The used dataset contains **8220** observations and **51** variables.  
+  
+For more details [click here](https://github.com/bartvink/Developing-Data-Products).
+  
+
+```{r}
+Data <- readRDS("WebScrapeRenaultCars.Rda")
+Data[1:10, c(50, 49, 51, 48)]
+```
+
+Summary
+========================================================
+transition: rotate
+
+In summary, this apllication shows the residual value of a Renault.  
+And the application contains :
+  
+* Some form of input (widget: textbox, radio button, checkbox, ...)
+* Some operation on the ui input in sever.R
+* Some reactive output, displayed as a result of server calculations
+* Some support documentation
+  
+    
